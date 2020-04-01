@@ -253,7 +253,8 @@ describe('Buyer creates MSA, signs it, sends to supplier, supplier responds with
         .send({ query: postBody });
 
       expect(res.statusCode).toEqual(200);
-      expect(res.body.data.createMSA.zkpPublicKeyOfBuyer).toEqual('0x21864a8a3f24dad163d716f77823dd849043481c7ae683a592a02080e20c1965');
+      console.log(res.body.data);
+      expect(res.body.data.createMSA.zkpPublicKeyOfBuyer).toEqual('0x822eb571d61afa0debd9efc1a31c2fe93f5d8576c684c285bf95dae5f8e2b050');
       expect(res.body.data.createMSA.zkpPublicKeyOfSupplier).toEqual('0x03366face983056ea73ff840eee1d8786cf72b0e14a8e44bac13e178ac3cebd5');
       expect(res.body.data.createMSA.sku).toEqual('FAKE-SKU-123');
       expect(res.body.data.createMSA._id).not.toBeNull();
